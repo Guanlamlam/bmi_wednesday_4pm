@@ -1,3 +1,4 @@
+import 'package:bmi_wednesday_4pm/info.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -206,10 +207,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   controller:_heightCtrl,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      labelText: 'Enter height (cm)'
+                      labelText: 'Enter height (m)'
                   )
               ),
               Expanded(child: SizedBox(height: double.infinity,)),
+              IconButton(
+                  icon: Icon(Icons.info),
+                  iconSize: 48,
+                  color: Colors.orangeAccent,
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Info(bmi: _bmiOutput)));
+                  },
+
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
